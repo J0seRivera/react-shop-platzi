@@ -7,8 +7,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  mode: 'development',
   resolve: {
-    extensions: ['js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
@@ -16,11 +17,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          laoder: 'babel-loader'
+          loader: 'babel-loader'
         }
       },
       {
-        test: /\.html/$,
+        test: /\.html$/,
         use: [
           {
             loader: 'html-loader'
